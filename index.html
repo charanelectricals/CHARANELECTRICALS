@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CHARAN ELECTRICALS</title>
+
+  <meta
+    name="description"
+    content="Professional electrical services and premium home interior design."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --black: #10100f;
+      --dark: #171715;
+      --cream: #f4f0e8;
+      --white: #ffffff;
+      --gold: #c6a56a;
+      --gold-light: #e3c891;
+      --muted: #9c9a94;
+      --line: rgba(255,255,255,.1);
+      --radius: 18px;
+      --max: 1240px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: .3s;
+    }
+
+    header.scrolled {
+      background: rgba(16,16,15,.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 18px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d6d3cb;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta {
+      padding: 12px 19px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light) !important;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: white;
+      font-size: 25px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10,10,9,.94) 0%,
+          rgba(10,10,9,.72) 50%,
+          rgba(10,10,9,.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85")
+        center/cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.35),
+          transparent 30%,
+          rgba(0,0,0,.55)
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 92px);
+      line-height: .98;
+      font-weight: 600;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-description {
+      max-width: 590px;
+      color: #d0cdc4;
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 23px;
+      border: 1px solid transparent;
+      transition: .25s;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #16140f;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.3);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .hero-bottom {
+      position: absolute;
+      bottom: 35px;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 45px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      color: white;
+    }
+
+    .stat span {
+      color: #aaa79f;
+      font-size: 12px;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading p {
+      max-width: 420px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .services .section-label {
+      color: #927341;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #d5d0c7;
+      border-left: 1px solid #d5d0c7;
+    }
+
+    .service-card {
+      padding: 35px 28px 40px;
+      min-height: 280px;
+      border-right: 1px solid #d5d0c7;
+      border-bottom: 1px solid #d5d0c7;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      background: #e9e4da;
+    }
+
+    .service-number {
+      color: #a18a62;
+      font-size: 12px;
+      margin-bottom: 55px;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #b9aa8e;
+      color: #8c6b39;
+      margin-bottom: 20px;
+      font-size: 21px;
+    }
+
+    .service-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #706c64;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      height: 650px;
+    }
+
+    .image-tag {
+      position: absolute;
+      right: -25px;
+      bottom: 35px;
+      background: var(--gold);
+      color: #16140f;
+      padding: 20px 25px;
+      font-weight: 600;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin: 25px 0;
+      font-size: 15px;
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin: 30px 0;
+    }
+
+    .about-list div {
+      padding: 15px;
+      border: 1px solid var(--line);
+      color: #d5d2cb;
+      font-size: 13px;
+    }
+
+    .about-list div::before {
+      content: "✓";
+      color: var(--gold);
+      margin-right: 8px;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      background: #121210;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 17px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: #aaa79f;
+      font-size: 12px;
+      transition: .2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--gold);
+      color: #17140f;
+      border-color: var(--gold);
+    }
+
+    .gallery {
+      columns: 3;
+      column-gap: 18px;
+    }
+
+    .project {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: #1c1c19;
+    }
+
+    .project img {
+      transition: transform .6s;
+    }
+
+    .project:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 45px 22px 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,.9));
+    }
+
+    .project-category {
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       ADD WORK
+    ========================= */
+
+    .add-work {
+      margin-top: 50px;
+      border: 1px dashed #4a4841;
+      padding: 45px;
+      text-align: center;
+      background: #151513;
+    }
+
+    .upload-icon {
+      width: 55px;
+      height: 55px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      font-size: 23px;
+    }
+
+    .add-work h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .add-work p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================= */
+
+    .testimonials {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: #e9e4da;
+      padding: 35px;
+    }
+
+    .stars {
+      color: #a7834b;
+      margin-bottom: 25px;
+      letter-spacing: 3px;
+    }
+
+    .testimonial p {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      line-height: 1.55;
+      margin-bottom: 30px;
+    }
+
+    .client {
+      color: #716d65;
+      font-size: 12px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 90px 0;
+      background:
+        linear-gradient(rgba(12,12,11,.85), rgba(12,12,11,.9)),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 70px);
+      max-width: 800px;
+      margin: auto auto 25px;
+    }
+
+    .cta p {
+      color: #b8b5ae;
+      max-width: 550px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: var(--black);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
+    }
+
+    .contact-info {
+      margin-top: 35px;
+    }
+
+    .contact-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item span {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .contact-item strong {
+      font-weight: 500;
+      color: #dedbd4;
+    }
+
+    .form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form input,
+    .form textarea,
+    .form select {
+      width: 100%;
+      padding: 16px;
+      background: #171715;
+      border: 1px solid var(--line);
+      color: white;
+      outline: none;
+      transition: .2s;
+    }
+
+    .form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form input:focus,
+    .form textarea:focus,
+    .form select:focus {
+      border-color: var(--gold);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      background: #0b0b0a;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #77756f;
+      font-size: 12px;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      z-index: 900;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      font-size: 25px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
+      transition: .2s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* =========================
+       LIGHTBOX
+    ========================= */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.92);
+      padding: 30px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 1000px;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      right: 30px;
+      top: 25px;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 35px;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        background: rgba(16,16,15,.98);
+        border-bottom: 1px solid var(--line);
+        padding: 25px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .about-image img {
+        height: 500px;
+      }
+
+      .gallery {
+        columns: 2;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 30px, var(--max));
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .hero {
+        min-height: 800px;
+      }
+
+      .hero h1 {
+        font-size: 51px;
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-bottom {
+        bottom: 20px;
+      }
+
+      .hero-stats {
+        gap: 22px;
+      }
+
+      .stat strong {
+        font-size: 21px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-heading {
+        display: block;
+        margin-bottom: 35px;
+      }
+
+      .section-heading p {
+        margin-top: 18px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .about-image img {
+        height: 400px;
+      }
+
+      .image-tag {
+        right: 15px;
+      }
+
+      .about-list {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        columns: 1;
+      }
+
+      .add-work {
+        padding: 30px 18px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header id="header">
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        <span class="logo-mark">C</span>
+        CHARAN ELECTRICALS
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Our Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          Electrical & Interior Specialists
+        </div>
+
+        <h1>
+          Powering Your
+          <span>Space.</span>
+        </h1>
+
+        <p class="hero-description">
+          Professional electrical solutions and refined interior
+          design for homes that are built to look beautiful,
+          feel comfortable and work perfectly.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-gold">
+            Explore Our Work →
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Get Free Consultation
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hero-bottom">
+
+      <div class="container hero-stats">
+
+        <div class="stat">
+          <strong>10+</strong>
+          <span>Years Experience</span>
+        </div>
+
+        <div class="stat">
+          <strong>250+</strong>
+          <span>Projects Completed</span>
+        </div>
+
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Client Focused</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================= -->
+
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <div>
+          <div class="section-label">What We Do</div>
+
+          <h2 class="section-title">
+            Expertise that<br>
+            transforms spaces.
+          </h2>
+        </div>
+
+        <p>
+          From electrical infrastructure to the final decorative
+          detail, we provide practical and beautiful solutions
+          for modern homes.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <article class="service-card reveal">
+
+          <h3>Electrical Work</h3>
+
+          <p>
+            Complete residential electrical installation,
+            wiring, repairs, switches, sockets and distribution
+            systems.
+          </p>
+        </article>
+
+
+        <article class="service-card reveal">
+
+          <h3>Lighting Design</h3>
+
+          <p>
+            Ambient, decorative and functional lighting designed
+            to make every room feel exceptional.
+          </p>
+        </article>
+
+
+        <article class="service-card reveal">
+
+          <h3>Home Interiors</h3>
+
+          <p>
+            Elegant interiors tailored around your lifestyle,
+            taste, space and budget.
+          </p>
+        </article>
+
+
+        <article class="service-card reveal">
+
+          <h3>Renovation</h3>
+
+          <p>
+            Complete room transformation, false ceilings,
+            wardrobes, kitchens and finishing.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section class="about" id="about">
+
+    <div class="container about-grid">
+
+      <div class="about-image reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+    " alt="Modern home interior"
+        >
+
+        <div class="image-tag">
+          Quality. Detail. Trust.
+        </div>
+
+      </div>
+
+
+      <div class="about-copy reveal">
+
+        <div class="section-label">
+          About Our Work
+        </div>
+
+        <h2 class="section-title">
+          Where technical
+          skill meets design.
+        </h2>
+
+        <p>
+          We combine professional electrical expertise with
+          modern interior design to create spaces that are both
+          functional and visually beautiful.
+        </p>
+
+        <p>
+          Every project receives personal attention, careful
+          planning and quality workmanship from the first idea
+          to the final finishing touch.
+        </p>
+
+        <div class="about-list">
+
+          <div>Professional workmanship</div>
+          <div>Premium finishing</div>
+          <div>Transparent pricing</div>
+          <div>Custom solutions</div>
+          <div>Reliable service</div>
+          <div>On-time execution</div>
+
+        </div>
+
+        <a href="#contact" class="btn btn-gold">
+          Talk About Your Project →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section class="projects" id="projects">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <div>
+          <div class="section-label">
+            Selected Projects
+          </div>
+
+          <h2 class="section-title">
+            Our work speaks<br>
+            for itself.
+          </h2>
+        </div>
+
+        <p>
+          Explore a selection of electrical installations,
+          interiors, lighting projects and home transformations.
+        </p>
+
+      </div>
+
+
+      <div class="filter-buttons reveal">
+
+        <button
+          class="filter-btn active"
+          data-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="interior"
+        >
+          Interior
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="electrical"
+        >
+          Electrical
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="lighting"
+        >
+          Lighting
+        </button>
+
+      </div>
+
+
+      <div class="gallery" id="gallery">
+
+        <!-- PROJECT 1 -->
+
+        <article
+          class="project reveal"
+          data-category="interior"
+        >
+
+          <img
+            src="https://m.media-amazon.com/images/I/71lJo7IodsL._AC_UF350,350_QL80_.jpg"   alt="OM Mandala Light"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Interior
+            </div>
+
+            <div class="project-title">
+              Modern pooja Room
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article
+          class="project reveal"
+          data-category="lighting"
+        >
+
+          <img
+            src="https://www.homedecorcompany.in/cdn/shop/files/O1CN01TpHdkb1GreVfGEPU1__2213875190676-0-cib_1024x1024_2x_jpg.webp?v=1750454967" alt="Hall  lighting"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Lighting
+            </div>
+
+            <div class="project-title">
+              Ambient Hall
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 3 -->
+
+        <article
+          class="project reveal"
+          data-category="interior"
+        >
+
+          <img
+            src="https://i.pinimg.com/736x/47/e5/40/47e54097f20b7cc8cc3ab7647f118470.jpg" alt="Modern kitchen"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Interior
+            </div>
+
+            <div class="project-title">
+              Contemporary Kitchen
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 4 -->
+
+        <article
+          class="project reveal"
+          data-category="electrical"
+        >
+
+          <img
+            src="https://5.imimg.com/data5/SELLER/Default/2021/7/QK/WO/ER/109267500/whatsapp-image-2021-07-20-at-11-54-48-1--500x500.jpeg"        alt="Electrical installation"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Electrical
+            </div>
+
+            <div class="project-title">
+              Residential Electrical
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 5 -->
+
+        <article
+          class="project reveal"
+          data-category="lighting"
+        >
+
+          <img
+            src="https://www.8mlights.com/cdn/shop/files/318A98BE-59D5-4A1F-BEBF-2C1AD3808678.png?v=1750055485&width=1445"       alt="Interior lighting"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Lighting
+            </div>
+
+            <div class="project-title">
+              Triangle Light
+            </div>
+          </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 6 -->
+
+        <article
+          class="project reveal"
+          data-category="interior"
+        >
+
+          <img
+            src="https://imgh.in/host/cw282y"       alt="Premium interior"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Interior
+            </div>
+
+            <div class="project-title">
+              Premium Residence
+            </div>
+          </div>
+
+        </article>
+        <!-- PROJECT 7 -->
+
+        <article
+          class="project reveal"
+          data-category="lighting"
+        >
+
+          <img
+            src="https://imgh.in/host/rz9ouz"       alt="Interior lighting"
+          >
+
+          <div class="project-overlay">
+            <div class="project-category">
+              Lighting
+            </div>
+
+            <div class="project-title">
+              triangular Lighting
+            </div>
+          </div>
+
+        </article>
+
+
+
+      </div>
+
+
+      <!-- ADD WORK -->
+
+      <div class="add-work reveal">
+
+        <div class="upload-icon">
+          +
+        </div>
+
+        <h3>
+          Add Your Latest Work
+        </h3>
+
+        <p>
+          Select project photos from your device to preview
+          them in the portfolio.
+        </p>
+
+        <label
+          for="fileInput"
+          class="btn btn-gold"
+        >
+          + Add Project Photos
+        </label>
+
+        <input
+          type="file"
+          id="fileInput"
+          accept="image/*"
+          multiple
+        />
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TESTIMONIALS
+  ========================= -->
+
+  <section class="testimonials">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <div>
+          <div class="section-label">
+            Client Stories
+          </div>
+
+          <h2 class="section-title">
+            Trusted by<br>
+            homeowners.
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="testimonial-grid">
+
+        <article class="testimonial reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "The electrical work was extremely neat and the
+            interior finishing completely changed the look of
+            our home."
+          </p>
+
+          <div class="client">
+            — Homeowner,Bengaluru
+          </div>
+
+        </article>
+
+
+        <article class="testimonial reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Very professional from start to finish. They
+            understood exactly what we wanted."
+          </p>
+
+          <div class="client">
+            — Residential Client
+          </div>
+
+        </article>
+
+
+        <article class="testimonial reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Excellent attention to detail. The lighting design
+            made our living room look completely different."
+          </p>
+
+          <div class="client">
+            — Interior Client
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section class="cta">
+
+    <div class="container reveal">
+
+      <div class="section-label">
+        Start Your Project
+      </div>
+
+      <h2>
+        Let's build a space
+        you'll love coming home to.
+      </h2>
+
+      <p>
+        Tell us about your electrical or interior project and
+        we'll help you turn the idea into reality.
+      </p>
+
+      <a href="#contact" class="btn btn-gold">
+        Request a Consultation →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+      <div class="reveal">
+
+        <div class="section-label">
+          Get In Touch
+        </div>
+
+        <h2 class="section-title">
+          Let's talk<br>
+          about your project.
+        </h2>
+
+        <div class="contact-info">
+
+          <div class="contact-item">
+            <span>Phone</span>
+            <strong>+91 9036882185</strong>
+          </div>
+
+          <div class="contact-item">
+            <span>WhatsApp</span>
+            <strong>+91 8660019272</strong>
+          </div>
+
+          <div class="contact-item">
+            <span>Email</span>
+            <strong>contact@charanelectricals.com</strong>
+          </div>
+
+          <div class="contact-item">
+            <span>Location</span>            <strong>Mathikere,Yeswanthpuram ,Bengaluru-560 021</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form class="form reveal" id="contactForm">
+        <div class="form-row">
+          <input
+            type="text"
+            id="userName"
+            placeholder="Your Name"
+            required
+          >
+          <input
+            type="tel"
+            id="userPhone"
+            placeholder="Phone Number"
+            required
+          >
+        </div>
+
+        <select id="userService" required>
+          <option value="">Select Service</option>
+          <option>Electrical Work</option>
+          <option>Interior Design</option>
+          <option>Lighting</option>
+          <option>Home Renovation</option>
+          <option>Other</option>
+        </select>
+
+        <textarea
+          id="userMessage"
+          placeholder="Tell us about your project..."
+          required
+        ></textarea>
+
+        <button
+          type="submit"
+          class="btn btn-gold"
+        >
+          Send Enquiry →
+        </button>
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 CHARAN ELECTRICALS. All rights reserved.
+      </div>
+
+      <div>
+        Electrical · Interiors · Lighting
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/918660019272"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <!-- LIGHTBOX -->
+
+  <div class="lightbox" id="lightbox">
+
+    <button
+      class="close-lightbox"
+      id="closeLightbox"
+    >
+      ×
+    </button>
+
+    <img id="lightboxImage" src="" alt="Project preview">
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(el => observer.observe(el));
+
+
+    /* =========================
+       PROJECT FILTER
+    ========================= */
+
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    const projects =
+      document.querySelectorAll(".project");
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        projects.forEach(project => {
+
+          if (
+            filter === "all" ||
+            project.dataset.category === filter
+          ) {
+
+            project.style.display = "block";
+
+          } else {
+
+            project.style.display = "none";
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* =========================
+       LIGHTBOX
+    ========================= */
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const closeLightbox =
+      document.getElementById("closeLightbox");
+
+
+    document
+      .querySelectorAll(".project img")
+      .forEach(image => {
+
+        image.addEventListener("click", () => {
+
+          lightboxImage.src = image.src;
+          lightbox.classList.add("active");
+
+        });
+
+      });
+
+
+    closeLightbox.addEventListener("click", () => {
+
+      lightbox.classList.remove("active");
+
+    });
+
+
+    lightbox.addEventListener("click", event => {
+
+      if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+      }
+
+    });
+
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+      }
+
+    });
+
+
+    /* =========================
+       IMAGE UPLOADER
+    ========================= */
+
+    const fileInput =
+      document.getElementById("fileInput");
+
+    const gallery =
+      document.getElementById("gallery");
+
+
+    fileInput.addEventListener("change", event => {
+
+      const files = [...event.target.files];
+
+      files.forEach(file => {
+
+        if (!file.type.startsWith("image/")) {
+          return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = e => {
+
+          const project =
+            document.createElement("article");
+
+          project.className =
+            "project reveal visible";
+
+          project.dataset.category =
+            "interior";
+
+          project.innerHTML = `
+
+            <img
+              src="${e.target.result}"
+              alt="New project"
+            >
+
+            <div class="project-overlay">
+
+              <div class="project-category">
+                New Project
+              </div>
+
+              <div class="project-title">
+                Your Latest Work
+              </div>
+
+            </div>
+
+          `;
+
+          gallery.prepend(project);
+
+
+          /* Enable lightbox for uploaded image */
+
+          project
+            .querySelector("img")
+            .addEventListener("click", () => {
+
+              lightboxImage.src =
+                e.target.result;
+
+              lightbox.classList.add("active");
+
+            });
+
+        };
+
+        reader.readAsDataURL(file);
+
+      });
+
+      /*
+        Reset input so the same file can be
+        selected again later.
+      */
+
+      fileInput.value = "";
+
+    });
+
+
+    /* =========================
+       CONTACT FORM - FIXED
+    ========================= */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      // Get form values
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const service = document.getElementById('userService').value;
+      const message = document.getElementById('userMessage').value.trim();
+
+      // Validate phone number (basic validation)
+      if (phone.length < 10) {
+        alert('Please enter a valid 10-digit phone number');
+        return;
+      }
+
+      // Create formatted message for WhatsApp
+      const formattedMessage = 
+        `*New Enquiry from Website*%0A%0A` +
+        `*Name:* ${name}%0A` +
+        `*Phone:* ${phone}%0A` +
+        `*Service:* ${service}%0A` +
+        `*Message:* ${message}%0A%0A` +
+        `_Sent via Website Contact Form_`;
+
+      // WhatsApp number (remove any spaces/special chars)
+      const phoneNumber = '918660019272';
+      
+      // Open WhatsApp with the message
+      window.open(`https://wa.me/${phoneNumber}?text=${formattedMessage}`, '_blank');
+
+      // Reset form after sending
+      contactForm.reset();
+
+    });
+
+
+    /* =========================
+       SMOOTH NAVIGATION
+    ========================= */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", event => {
+
+        const target =
+          document.querySelector(link.getAttribute("href"));
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
